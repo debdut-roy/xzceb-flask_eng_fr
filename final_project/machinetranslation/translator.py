@@ -15,6 +15,7 @@ language_translator = LanguageTranslatorV3(
     authenticator=authenticator
 )
 language_translator.set_service_url('https://api.au-syd.language-translator.watson.cloud.ibm.com')
+language_translator.set_disable_ssl_verification(True)
 
 def englishToFrench(englishText):
     #write the code here
@@ -29,5 +30,7 @@ def frenchToEnglish(frenchText):
     #write the code here
     translation = language_translator.translate(text=frenchText, model_id='en-fr').get_result()
     englishText = translation['translations'][0]['translation']
-    
+
     return englishText
+
+print(englishToFrench('Hello'))
