@@ -14,23 +14,23 @@ language_translator = LanguageTranslatorV3(
     version='2022-12-23',
     authenticator=authenticator
 )
-language_translator.set_service_url('https://api.au-syd.language-translator.watson.cloud.ibm.com')
-language_translator.set_disable_ssl_verification(True)
+language_translator.set_service_url(url)
+# language_translator.set_disable_ssl_verification(True)
 
 def englishToFrench(englishText):
-    #write the code here
-    translation = language_translator.translate(text=englishText, model_id='en-fr').get_result()
-    
-    # print(json.dumps(translation, indent=2, ensure_ascii=False))
-    frenchText = translation['translations'][0]['translation']
-    # print(frenchText)
+    """
+    This function translates English to French
+    """
+    french_translation = language_translator.translate(text=englishText, model_id='en-fr').get_result()
+    frenchText = french_translation.get('translations')[0].get('translation')
     return frenchText
 
 def frenchToEnglish(frenchText):
-    #write the code here
-    translation = language_translator.translate(text=frenchText, model_id='en-fr').get_result()
-    englishText = translation['translations'][0]['translation']
-
+    """
+    This function translates French to English
+    """
+    english_translation = language_translator.translate(text=frenchText, model_id='en-fr').get_result()
+    englishText = english_translation.get('translations')[0].get('translation')
     return englishText
 
 print(englishToFrench('Hello'))
