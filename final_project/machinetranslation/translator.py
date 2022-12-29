@@ -17,18 +17,18 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url(url)
 # language_translator.set_disable_ssl_verification(True)
 
-def englishToFrench(englishText):
+def englishToFrench(english_text):
     """
     This function translates English to French
     """
-    french_translation = language_translator.translate(text=englishText, model_id='en-fr').get_result()
-    frenchText = french_translation.get('translations')[0].get('translation')
-    return frenchText
+    french_translation = language_translator.translate(text=english_text, model_id='en-fr').get_result()
+    french_text = french_translation.get('translations')[0].get('translation')
+    return french_text
 
-def frenchToEnglish(frenchText):
+def frenchToEnglish(french_text):
     """
     This function translates French to English
     """
-    english_translation = language_translator.translate(text=frenchText, model_id='fr-en').get_result()
-    englishText = english_translation.get('translations')[0].get('translation')
-    return englishText
+    english_translation = language_translator.translate(text=french_text, model_id='fr-en').get_result()
+    english_text = english_translation.get('translations')[0].get('translation')
+    return english_text
