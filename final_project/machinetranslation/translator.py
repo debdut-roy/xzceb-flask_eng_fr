@@ -27,6 +27,10 @@ def english_to_french(english_text):
     """
     This function translates English to French
     """
+    if english_text is None:
+        return None
+    if english_text == '':
+        return ''
     french_translation = language_translator.translate(text=english_text,
     model_id='en-fr').get_result()
     french_text = french_translation.get('translations')[0].get('translation')
@@ -36,6 +40,10 @@ def french_to_english(french_text):
     """
     This function translates French to English
     """
+    if french_text is None:
+        return None
+    if french_text == '':
+        return ''
     english_translation = language_translator.translate(text=french_text,
     model_id='fr-en').get_result()
     english_text = english_translation.get('translations')[0].get('translation')

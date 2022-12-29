@@ -19,3 +19,5 @@ class TestEnglishToFrech(unittest.TestCase):
     def test_french_to_english(self):
         # If 'Hello' input then translation = 'Bonjour'
         self.assertEqual(french_to_english('Bonjour'),'Hello')
+
+unittest.main()
