@@ -29,6 +29,6 @@ def frenchToEnglish(frenchText):
     """
     This function translates French to English
     """
-    english_translation = language_translator.translate(text=frenchText, model_id='en-fr').get_result()
+    english_translation = language_translator.translate(text=frenchText, model_id='fr-en').get_result()
     englishText = english_translation.get('translations')[0].get('translation')
     return englishText
