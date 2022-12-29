@@ -20,8 +20,8 @@ class TestEnglishToFrech(unittest.TestCase):
         self.assertEqual(english_to_french(''),'')
 
     def test_english_to_french_random(self):
-        """If 'Three' input then translation = 'Trois'"""
-        self.assertEqual(english_to_french('Three'),'Trois')
+        """If 'please' input then translation = 's''il vous plaît'"""
+        self.assertNotEqual(english_to_french('please'),'s''il vous plaît')
 
 class TestFrenchToEnglish(unittest.TestCase):
     """
@@ -40,7 +40,7 @@ class TestFrenchToEnglish(unittest.TestCase):
         self.assertEqual(french_to_english(''),'')
 
     def test_french_to_english_random(self):
-        """If 'Je mange une pomme.' input then translation = 'I am eating an apple'"""
-        self.assertEqual(french_to_english('Je mange une pomme.'),'I eat an apple.')
+        """If 'Je mange une pomme.' input then translation is not 'I am eating an apple'"""
+        self.assertNotEqual(french_to_english('Je mange une pomme.'),'I am eating an apple.')
 
 unittest.main()
