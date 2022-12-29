@@ -32,5 +32,3 @@ def frenchToEnglish(frenchText):
     english_translation = language_translator.translate(text=frenchText, model_id='en-fr').get_result()
     englishText = english_translation.get('translations')[0].get('translation')
     return englishText
-
-print(englishToFrench('Hello'))
