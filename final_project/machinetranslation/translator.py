@@ -11,7 +11,7 @@ url = os.environ['url']
 
 authenticator = IAMAuthenticator(apikey)
 language_translator = LanguageTranslatorV3(
-    version='{version}',
+    version='2022-12-23',
     authenticator=authenticator
 )
 language_translator.set_service_url('https://api.au-syd.language-translator.watson.cloud.ibm.com')
